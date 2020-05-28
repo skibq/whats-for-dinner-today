@@ -1,9 +1,8 @@
 <template>
-  <Recipe :recipe="recipe" />
+  <Recipe :recipe="randomRecipe" />
 </template>
 
 <script>
-import { randomRecipe } from 'spoonacular-api-library'
 import Recipe from '~/components/recipe/recipe'
 
 export default {
@@ -11,15 +10,13 @@ export default {
   components: {
     Recipe
   },
-  data () {
-    return {
-      recipe: {}
-    }
-  },
   created () {
-    randomRecipe.get().then(({ data }) => {
-      this.recipe = data.recipes[0]
-    })
+    this.$store.dispatch('recipe/getRandomRecipe')
+  },
+  computed: {
+    randomRecipe () {
+      return this.$store.state.recipe.randomRecipe
+    }
   }
 }
 </script>

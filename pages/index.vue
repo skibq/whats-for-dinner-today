@@ -12,6 +12,7 @@
         <a
           href="#"
           class="button--green"
+          @click="getRandomRecipe"
         >
           Something else, please...
         </a>
@@ -21,10 +22,14 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import RandomRecipeContainer from '~/components/recipe/random-recipe-container'
 
 export default {
-  components: { RandomRecipeContainer }
+  components: { RandomRecipeContainer },
+  methods: {
+    ...mapActions({ getRandomRecipe: 'recipe/getRandomRecipe' })
+  }
 }
 </script>
 
