@@ -1,6 +1,6 @@
-# whats-for-dinner
+# What's for dinner
 
-> Application to get some inspiration when we don&#39;t know what to eat
+> Get some inspiration when you don't know what to eat today
 
 ## Build Setup
 
@@ -20,3 +20,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+### This app was made using Spoonacular API Library
+Check library [GiHub repository](https://github.com/skibq/spoonacular-api-library)
+And [npm package](https://www.npmjs.com/package/spoonacular-api-library)

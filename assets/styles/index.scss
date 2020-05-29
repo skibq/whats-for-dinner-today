@@ -1,0 +1,17 @@
+@import '~/assets/styles/breakpoints';
+@import '~/assets/styles/colours';
+
+// universal scale to work with highly scalable fonts
+// add this class as a parent and use "em" values to make font responsive
+.responsive-fontsize-scale {
+  font-size: 46px;;
+  @include md {
+    font-size: 64px;
+  }
+  @include lg {
+    font-size: 82px;
+  }
+  @include xl {
+    font-size: 100px;
+  }
+}

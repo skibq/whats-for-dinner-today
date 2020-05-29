@@ -1,13 +1,16 @@
 <template>
-  <div class="recipe__container">
+  <article class="recipe__container">
     <div class="recipe">
-      <h3 class="recipe__title">
-        {{ recipe.title }}
-      </h3>
+      <div class="responsive-fontsize-scale">
+        <h3 class="recipe__title">
+          {{ recipe.title }}
+        </h3>
+      </div>
+      <img class="recipe__image" :src="recipe.image">
       <!-- eslint-disable-next-line vue/no-v-html -->
       <div class="recipe__instructions" v-html="recipe.instructions" />
     </div>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -25,9 +28,12 @@ export default {
 
 <style lang="scss">
   @import '~/assets/styles/colours';
+  @import '~/assets/styles/breakpoints';
 
   .recipe {
-    max-width: 1200px;
+    @include xl {
+      max-width: 1100px;
+    }
     &__container {
       display: flex;
       justify-content: center;
@@ -35,7 +41,11 @@ export default {
     &__title {
       color: $main-color;
       margin-bottom: 20px;
-      font-size: 38px;
+      font-size: 0.38em;
+    }
+    &__image {
+      margin-bottom: 20px;
+      max-width: 100%;
     }
     &__instructions {
       & ol {
