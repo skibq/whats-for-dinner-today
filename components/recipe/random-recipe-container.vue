@@ -10,13 +10,13 @@ export default {
   components: {
     Recipe
   },
-  created () {
-    this.$store.dispatch('recipe/getRandomRecipe')
-  },
   computed: {
     randomRecipe () {
       return this.$store.state.recipe.randomRecipe
     }
+  },
+  created () {
+    this.$store.dispatch('recipe/getRandomRecipe')
   }
 }
 </script>

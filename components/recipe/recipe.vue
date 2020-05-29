@@ -1,8 +1,10 @@
 <template>
   <div class="recipe__container">
     <div class="recipe">
+      <h3 class="recipe__title">
+        {{ recipe.title }}
+      </h3>
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <h3 class="recipe__title">{{ recipe.title }}</h3>
       <div class="recipe__instructions" v-html="recipe.instructions" />
     </div>
   </div>
